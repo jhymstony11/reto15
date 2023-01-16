@@ -1,0 +1,37 @@
+<html>
+    <body class="container">
+        <section class="row">
+            <!-- CREAR VARIABLE Y INVOCARLO DESDE LA VISTA POR INTERPOLACION -->
+            <section class="row">
+                <section class="col">
+                    <h1 class="text-center" [ngStyle]="{'color':'white','background-color':'#66cdaa'}" class="text-center">{{ titulo }}</h1>
+                </section>
+            </section>
+    
+            <!-- CREAR UNEVENT BINDING PARA OCULTAR / MOSTRAR CONTENIDO DEL SECTION -->
+            <h3 class="text-center" [ngStyle]="{'color':'white','background-color':'#191970'}">Event binding</h3>
+            <p *ngIf="mostrar">Event Bingding, es el mecanismo de data binding mediante el cual trabaja con los eventos que se encuentra en el DOM.</p>
+        </section>
+        <section class="text-center">
+            <input class="bg-warning" type="button" value={{valor}} (click)="Generar()">
+        </section>
+
+        <section class="row">
+            <!-- SE MUESTRA EL CONTENIDO DE LA VARIABLE CON (Interpolacion) -->
+            <h3 class="text-center" [ngStyle]="{'color':'white','background-color':'#191970'}">Two way binding</h3>
+            <section class="col">
+                <h4>Por Interpolacion desde HTML</h4>
+                <textarea name="twoWay" id="twoWay" cols="70" rows="5">{{ twoWay }}</textarea>
+            </section>
+            
+            <!-- SE MUESTRA EL CONTENIDO DE LA VARIABLE CON (ngModel) -->
+            <section class="col">
+                <h4>Por la directiva ngModel</h4>
+                <textarea [(ngModel)]="twoWay" name="twoWay" id="twoWay" cols="70" rows="5"></textarea>
+            </section>
+        </section>
+    </body>
+    
+</html>
+
+
